@@ -6,4 +6,4 @@ A spike spectrum model that simulates winter wheat spike reflectance across the 
 2. Metadata.xlsx is the input parameters, and the description of the order of input is in PROSPECTS_Main.m. You can also provide the input in PROSPECTS_Main.m after slightly changing the code.  
 3. spike_spectrum_simulation.xlsx is the output, and the order is [wavelength, spike reflectance].  
 4. The key code of the PROSPECTS model is in PROSPECTS_Model.m.   
-5. dataSpec_PROSPECTSB.m and calctav.m are about the specific absorption coefficient of spike biochemical constituents and refractive index parameter, which do not need the users to be quite familiar with. 
+5. dataSpec_PROSPECTS.m and calctav.m are about the specific absorption coefficient of spike biochemical constituents and refractive index parameter, which do not need the users to be quite familiar with. 
