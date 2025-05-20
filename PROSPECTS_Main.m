@@ -1,6 +1,6 @@
 % _______________________________________________________________________
 % Main function for PROSPECTS model
-% Version 1.0 (May, 20th 20205)
+% Version 1.0 (May, 20th 2025)
 % _______________________________________________________________________
 % for any question or request, please contact:
 %
@@ -23,16 +23,16 @@
 % Acknowledgement: The authors thank the PROPSECT team for providing the
 %                  calctav.m.
 
-% AGDD来驱动PROSPECTS
+% input leaf structural and biochemical traits
 parameters = readmatrix('Metadata.xlsx', 'Sheet', 'Spike_Database', 'Range', 'A2');
 Cab_total = parameters(:,7);
 Car_total = parameters(:,8);
 Cw_total = parameters(:,9);
 Cm_total = parameters(:,10);
 AGDD_total = parameters(:,3);
-results = cell(2101, 64);  % 创建一个 cell 数组存储结果
-W_all = cell(2101, 64);  % 创建一个 cell 数组存储结果
-LRT_all = cell(2101, 64);  % 创建一个 cell 数组存储结果
+results = cell(2101, 64); 
+W_all = cell(2101, 64); 
+LRT_all = cell(2101, 64);
 for i = 1:length(Cm_total)
     Cab = Cab_total(i);
     Car = Car_total(i);
@@ -44,7 +44,6 @@ for i = 1:length(Cm_total)
     Wavelength = LRT(:, 1);
     R = LRT(:, 2);
 
-   % 将结果逐行存储到 cell 数组中
     for j = 1:2101
         results{j, i} = [Wavelength(j), R(j)];       
     end
@@ -52,5 +51,5 @@ for i = 1:length(Cm_total)
 end
 
 
-writecell([results], 'test.xlsx', 'sheet', 'dnr');  % 写入表头和数据
+writecell([results], 'test.xlsx', 'sheet', 'dnr'); 
 
